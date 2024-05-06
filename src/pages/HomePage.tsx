@@ -79,7 +79,7 @@ export function HomePage() {
                   className="px-py p-[0.35em] mt-3 rounded-xl text-type-dimmed box-content text-[18px] bg-largeCard-background text-buttons-secondaryText justify-center items-center"
                   onClick={() => navigate("/discover")}
                 >
-                  {t("home.search.discover")}
+                  🎥 {t("home.search.discover")}
                 </Button>
               </div>
             ) : null}
