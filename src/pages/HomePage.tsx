@@ -34,8 +34,6 @@ function useSearch(search: string) {
   };
 }
 
-// What the sigma?
-
 export function HomePage() {
   const { t } = useTranslation();
   const { t: randomT } = useRandomTranslation();
@@ -53,39 +51,22 @@ export function HomePage() {
       <div className="mb-16 sm:mb-24">
         <Helmet>
           <style type="text/css">{`
-            html, body {
-              scrollbar-gutter: stable;
-            }
-          `}</style>
+              html, body {
+                scrollbar-gutter: stable;
+              }
+            `}</style>
           <title>{t("global.name")}</title>
         </Helmet>
         <HeroPart searchParams={searchParams} setIsSticky={setShowBg} />
       </div>
-      <WideContainer>
-        {s.loading ? (
-          <SearchLoadingPart />
-        ) : s.searching ? (
-          <SearchListPart searchQuery={search} />
-        ) : (
-          <>
-            <div className="flex flex-col gap-8">
-              <BookmarksPart onItemsChange={setShowBookmarks} />
-              <WatchingPart onItemsChange={setShowWatching} />
-            </div>
-            {!(showBookmarks || showWatching) ? (
-              <div className="flex flex-col items-center justify-center">
-                <p className="text-[18.5px] pb-3">{emptyText}</p>
-                <Button
-                  className="px-py p-[0.35em] mt-3 rounded-xl text-type-dimmed box-content text-[18px] bg-largeCard-background text-buttons-secondaryText justify-center items-center"
-                  onClick={() => navigate("/discover")}
-                >
-                  🎥 {t("home.search.discover")}
-                </Button>
-              </div>
-            ) : null}
-          </>
-        )}
-      </WideContainer>
+      <div className="flex justify-center mt-3">
+        <Button
+          className="px-py p-[0.35em] rounded-xl text-type-dimmed box-content text-[18px] bg-largeCard-background text-buttons-secondaryText justify-center items-center"
+          onClick={() => navigate("/discover")}
+        >
+          🎥 {t("home.search.discover")}
+        </Button>
+      </div>
     </HomeLayout>
   );
 }
