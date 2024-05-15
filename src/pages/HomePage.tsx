@@ -61,12 +61,26 @@ export function HomePage() {
       </div>
       <div className="flex justify-center mt-3">
         <Button
-          className="px-py p-[0.35em] rounded-xl text-type-dimmed box-content text-[18px] bg-largeCard-background text-buttons-secondaryText justify-center items-center"
+          className="px-py p-[0.75em] rounded-xl text-type-dimmed box-content text-[18px] bg-largeCard-background text-buttons-secondaryText justify-center items-center"
           onClick={() => navigate("/discover")}
         >
-          🎥 {t("home.search.discover")}
+          🎥 How about something new?
         </Button>
       </div>
+      <WideContainer>
+        {s.loading ? (
+          <SearchLoadingPart />
+        ) : s.searching ? (
+          <SearchListPart searchQuery={search} />
+        ) : (
+          <>
+            <div className="flex flex-col gap-8">
+              <BookmarksPart onItemsChange={setShowBookmarks} />
+              <WatchingPart onItemsChange={setShowWatching} />
+            </div>
+          </>
+        )}
+      </WideContainer>
     </HomeLayout>
   );
 }

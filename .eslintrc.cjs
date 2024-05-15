@@ -57,6 +57,7 @@ module.exports = {
     "react/jsx-props-no-spreading": "off",
     "consistent-return": "off",
     "no-continue": "off",
+    "react/jsx-no-useless-fragment": "off",
     "no-eval": "off",
     "no-await-in-loop": "off",
     "no-nested-ternary": "off",
