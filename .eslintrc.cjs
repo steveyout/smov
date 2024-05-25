@@ -48,6 +48,7 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     "no-console": ["warn", { allow: ["warn", "error", "debug", "info"] }],
     "@typescript-eslint/no-this-alias": "off",
+    "@typescript-eslint/no-unused-vars": "off",
     "import/prefer-default-export": "off",
     "@typescript-eslint/no-empty-function": "off",
     "no-shadow": "off",
