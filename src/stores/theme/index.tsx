@@ -15,7 +15,7 @@ const is420 = currentDate.getMonth() + 1 === 4 && currentDate.getDate() === 20;
 export const useThemeStore = create(
   persist(
     immer<ThemeStore>((set) => ({
-      theme: is420 ? "red" : null,
+      theme: is420 ? "teal" : null,
       setTheme(v) {
         set((s) => {
           s.theme = v;
