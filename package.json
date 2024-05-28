@@ -1,5 +1,5 @@
 {
-  "name": "sudo-flix",
+  "name": "StreamWatch",
   "version": "4.7.0",
   "private": true,
   "homepage": "https://github.com/sussy-code/smov",
@@ -140,5 +140,6 @@
       "crypto-js@<4.2.0": ">=4.2.0",
       "rollup": "npm:@rollup/wasm-node"
     }
-  }
+  },
+  "packageManager": "pnpm@9.1.3+sha256.7f63001edc077f1cff96cacba901f350796287a2800dfa83fe898f94183e4f5f"
 }
