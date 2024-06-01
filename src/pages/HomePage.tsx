@@ -58,14 +58,14 @@ export function HomePage() {
           <title>{t("global.name")}</title>
         </Helmet>
         <HeroPart searchParams={searchParams} setIsSticky={setShowBg} />
-      </div>
-      <div className="flex justify-center mt-3">
-        <Button
-          className="px-py p-[0.75em] rounded-xl text-type-dimmed box-content text-[18px] bg-largeCard-background text-buttons-secondaryText justify-center items-center"
-          onClick={() => navigate("/discover")}
-        >
-          🎥 How about something new?
-        </Button>
+        <div className="flex justify-center mt-3">
+          <Button
+            className="px-py p-[0.75em] rounded-xl text-type-dimmed box-content text-[18px] bg-largeCard-background text-buttons-secondaryText justify-center items-center"
+            onClick={() => navigate("/discover")}
+          >
+            🎥 How about something new?
+          </Button>
+        </div>
       </div>
       <WideContainer>
         {s.loading ? (
