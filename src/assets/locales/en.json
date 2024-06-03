@@ -199,7 +199,7 @@
     "menu": {
       "about": "About us",
       "logout": "Log out",
-      "register": "Sync to sudo-cloud",
+      "register": "Sync to the cloud!",
       "settings": "Settings",
       "support": "Support",
       "discover": "Discover"
@@ -574,7 +574,7 @@
         },
         "unsetStatus": {
           "description": "Please click the button to the right to start the setup process.",
-          "title": "You haven't gone through setup"
+          "title": "You have the default setup."
         }
       },
       "title": "Connections",
