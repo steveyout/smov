@@ -194,7 +194,7 @@
   },
   "navigation": {
     "banner": {
-      "offline": "Check your internet connection! 🦢"
+      "offline": "Check your internet connection, silly goose! 🦢"
     },
     "menu": {
       "about": "About us",
@@ -236,7 +236,7 @@
       "notDetecting": "Installed on Chrome, but the site isn't detecting it? Try reloading the page!",
       "notDetectingAction": "Reload page",
       "status": {
-        "disallowed": "Extension is not enabled (,,>﹏<,,)",
+        "disallowed": "Extension is not enabled for this page (,,>﹏<,,)",
         "disallowedAction": "Enable extension",
         "failed": "Failed to request status",
         "loading": "Waiting for you to install the extension",
@@ -279,7 +279,7 @@
           "title": "Custom proxy"
         }
       },
-      "title": "Let's get you setup 🥳"
+      "title": "Let's get you setup with levrx 🥳"
     }
   },
   "overlays": {
@@ -573,7 +573,7 @@
           "title": "Everything is set up!"
         },
         "unsetStatus": {
-          "description": "You don't need to do anything here, you should be able to stream perfectly fine! Enjoy my fellow friend.",
+          "description": "You don't need to do anything here, you should be able to stream perfectly fine! Enjoy my fellow friend!",
           "title": "You have the default setup."
         }
       },
@@ -620,7 +620,7 @@
       "backgroundLabel": "Background opacity",
       "backgroundBlurLabel": "Background blur",
       "colorLabel": "Color",
-      "previewQuote": "Thot daughter or a gay son? 🤔",
+      "previewQuote": "Would you rather have a thot daughter or a gay son? 🤔",
       "textSizeLabel": "Text size",
       "title": "Subtitles",
       "textBoldLabel": "Bold text"
