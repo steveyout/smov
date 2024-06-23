@@ -16,7 +16,7 @@
 
 
 ## Referrers
-- [Priacy Subreddit Megathread](https://www.reddit.com/r/Piracy/s/iymSloEpXn)
+- [Piracy Subreddit Megathread](https://www.reddit.com/r/Piracy/s/iymSloEpXn)
 - [Toon's Instances](https://erynith.github.io/movie-web-instances)
 - [StreamWatch docs](https://sussy-code.github.io/docs)
 - [StreamWatch Discord](https://discord.gg/r5cYshWM4G)
