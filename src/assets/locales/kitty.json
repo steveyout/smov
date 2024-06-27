@@ -116,8 +116,7 @@
             "loading": "Loading...",
             "noResults": "We couldn't meow anything!",
             "placeholder": {
-                "default": "Meow do you want to meow?",
-                "extra": []
+                "default": "Meow do you want to meow?"
             },
             "sectionTitle": "Meow results"
         },

@@ -116,8 +116,7 @@
             "loading": "Loading...",
             "noResults": "We couldn't banana anything!",
             "placeholder": {
-                "default": "Banana do you want to banana?",
-                "extra": []
+                "default": "Banana do you want to banana?"
             },
             "sectionTitle": "Banana results"
         },
