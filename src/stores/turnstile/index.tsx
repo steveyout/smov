@@ -74,9 +74,9 @@ export function isTurnstileInitialized() {
 }
 
 export async function getTurnstileToken() {
-  const turnstile = getTurnstile();
   try {
     const token = await useTurnstileStore.getState().getToken();
+
     reportCaptchaSolve(true);
     return token;
   } catch (err) {
@@ -103,7 +103,7 @@ export function TurnstileProvider(props: {
       <Turnstile
         siteKey={siteKey}
         options={{
-          refreshExpired: "auto",
+          refreshExpired: "never",
           theme: "light",
         }}
         onWidgetLoad={(widgetId) => {

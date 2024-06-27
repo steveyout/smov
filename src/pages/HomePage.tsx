@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { To, useNavigate } from "react-router-dom";
 
 import { WideContainer } from "@/components/layout/WideContainer";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -34,6 +34,8 @@ function useSearch(search: string) {
   };
 }
 
+// What the sigma?
+
 export function HomePage() {
   const { t } = useTranslation();
   const { t: randomT } = useRandomTranslation();
@@ -46,26 +48,23 @@ export function HomePage() {
   const [showBookmarks, setShowBookmarks] = useState(false);
   const [showWatching, setShowWatching] = useState(false);
 
+  const handleClick = (path: To) => {
+    window.scrollTo(0, 0);
+    navigate(path);
+  };
+
   return (
     <HomeLayout showBg={showBg}>
       <div className="mb-16 sm:mb-24">
         <Helmet>
           <style type="text/css">{`
-              html, body {
-                scrollbar-gutter: stable;
-              }
-            `}</style>
+            html, body {
+              scrollbar-gutter: stable;
+            }
+          `}</style>
           <title>{t("global.name")}</title>
         </Helmet>
         <HeroPart searchParams={searchParams} setIsSticky={setShowBg} />
-        <div className="flex justify-center mt-3">
-          <Button
-            className="px-py p-[0.75em] rounded-xl text-type-dimmed box-content text-[18px] bg-largeCard-background text-buttons-secondaryText justify-center items-center"
-            onClick={() => navigate("/discover")}
-          >
-            🎥 How about something new?
-          </Button>
-        </div>
       </div>
       <WideContainer>
         {s.loading ? (
@@ -78,6 +77,17 @@ export function HomePage() {
               <BookmarksPart onItemsChange={setShowBookmarks} />
               <WatchingPart onItemsChange={setShowWatching} />
             </div>
+            {!(showBookmarks || showWatching) ? (
+              <div className="flex flex-col items-center justify-center">
+                <p className="text-[18.5px] pb-3">{emptyText}</p>
+                <Button
+                  className="px-py p-[0.35em] mt-3 rounded-xl text-type-dimmed box-content text-[18px] bg-largeCard-background text-buttons-secondaryText justify-center items-center"
+                  onClick={() => handleClick("/discover")}
+                >
+                  {t("home.search.discover")}
+                </Button>
+              </div>
+            ) : null}
           </>
         )}
       </WideContainer>
