@@ -11,7 +11,7 @@ const availableThemes = [
     key: "settings.appearance.themes.default",
   },
   {
-    id: "Kermit",
+    id: "teal",
     selector: "theme-teal",
     key: "settings.appearance.themes.teal",
   },
@@ -19,11 +19,6 @@ const availableThemes = [
     id: "red",
     selector: "theme-red",
     key: "settings.appearance.themes.red",
-  },
-  {
-    id: "gray",
-    selector: "theme-gray",
-    key: "settings.appearance.themes.gray",
   },
   {
     id: "blck",

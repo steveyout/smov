@@ -10,7 +10,7 @@ def replace_in_json_files(directory):
 
             if isinstance(data, dict):
 
-                updated_data = recursive_replace(data, 'sudo-flix', 'movie-vault') # for anyone who forks this, its quite self-explanatory.
+                updated_data = recursive_replace(data, 'sudo-flix', 'levrx') # for anyone who forks this, its quite self-explanatory.
 
                 with open(filepath, 'w', encoding='utf-8') as file:
                     json.dump(updated_data, file, ensure_ascii=False, indent=4)
