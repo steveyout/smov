@@ -67,7 +67,8 @@ export function HeroPart({ setIsSticky, searchParams }: HeroPartProps) {
         <div className="relative z-10 mb-16">
           <HeroTitle className="mx-auto max-w-md">{title}</HeroTitle>
           <Link to="https://youplex.site">
-            <img src="https://i.ibb.co/G0xNCwk/Screenshot-255.png" alt="Screenshot-255"  />
+            <img src="https://i.ibb.co/G0xNCwk/Screenshot-255.png"
+                 alt="Screenshot-255" />
           </Link>
         </div>
         <div className="relative h-20 z-30">
