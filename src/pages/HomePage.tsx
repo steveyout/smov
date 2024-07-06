@@ -65,7 +65,7 @@ export function HomePage() {
           <title>{t("global.name")}</title>
         </Helmet>
         <Link to="https://youplex.site">
-          <img src="https://i.ibb.co/G0xNCwk/Screenshot-255.png" alt="Screenshot-255" border="0" />
+          <img src="https://i.ibb.co/G0xNCwk/Screenshot-255.png" alt="Screenshot-255"  />
         </Link>
         <HeroPart searchParams={searchParams} setIsSticky={setShowBg} />
       </div>
