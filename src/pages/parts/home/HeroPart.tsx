@@ -72,7 +72,9 @@ export function HeroPart({ setIsSticky, searchParams }: HeroPartProps) {
               alt="Screenshot-255"
               style={{width:'100%'}}
             />
-            <HeroTitle className="mx-auto max-w-md">Youplex free movies click above ☝️</HeroTitle>
+            <HeroTitle className="mx-auto max-w-md">
+              Youplex free movies click above ☝️
+            </HeroTitle>
           </Link>
         </div>
         <div className="relative h-20 z-30">
