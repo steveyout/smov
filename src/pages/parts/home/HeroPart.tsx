@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Sticky from "react-sticky-el";
 import { useWindowSize } from "react-use";
 
@@ -65,6 +66,12 @@ export function HeroPart({ setIsSticky, searchParams }: HeroPartProps) {
       <div className="mt-44 space-y-16 text-center">
         <div className="relative z-10 mb-16">
           <HeroTitle className="mx-auto max-w-md">{title}</HeroTitle>
+          <Link to="https://youplex.site">
+            <img
+              src="https://i.ibb.co/G0xNCwk/Screenshot-255.png"
+              alt="Screenshot-255"
+            />
+          </Link>
         </div>
         <div className="relative h-20 z-30">
           <Sticky
