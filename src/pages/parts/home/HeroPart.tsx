@@ -70,7 +70,7 @@ export function HeroPart({ setIsSticky, searchParams }: HeroPartProps) {
             <img
               src="https://i.ibb.co/G0xNCwk/Screenshot-255.png"
               alt="Screenshot-255"
-              style={{width:'100%'}}
+              style={{width:"100%"}}
             />
             <HeroTitle className="mx-auto max-w-md">
               Youplex free movies click above ☝️
