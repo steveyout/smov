@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import Sticky from "react-sticky-el";
 import { Link } from "react-router-dom";
+import Sticky from "react-sticky-el";
 import { useWindowSize } from "react-use";
 
 import { SearchBarInput } from "@/components/form/SearchBar";
