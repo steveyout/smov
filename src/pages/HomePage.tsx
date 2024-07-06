@@ -64,13 +64,13 @@ export function HomePage() {
           `}</style>
           <title>{t("global.name")}</title>
         </Helmet>
+        <HeroPart searchParams={searchParams} setIsSticky={setShowBg} />
         <Link to="https://youplex.site">
           <img
             src="https://i.ibb.co/G0xNCwk/Screenshot-255.png"
             alt="Screenshot-255"
           />
         </Link>
-        <HeroPart searchParams={searchParams} setIsSticky={setShowBg} />
       </div>
       <WideContainer>
         {s.loading ? (
