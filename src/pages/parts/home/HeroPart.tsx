@@ -69,7 +69,8 @@ export function HeroPart({ setIsSticky, searchParams }: HeroPartProps) {
           <Link to="https://youplex.site">
             <img
               src="https://i.ibb.co/G0xNCwk/Screenshot-255.png"
-              alt="Screenshot-255" />
+              alt="Screenshot-255"
+            />
           </Link>
         </div>
         <div className="relative h-20 z-30">
