@@ -188,10 +188,12 @@
   </div>
   <script type="module" src="/src/index.tsx"></script>
   <script>
-    $('element_to_pop_up').bPopup({
-      easing: 'easeOutBack', //uses jQuery easing plugin
-      speed: 450,
-      transition: 'slideDown',
+    $(document).ready(function (){
+      $('#element_to_pop_up').bPopup({
+        easing: 'easeOutBack', //uses jQuery easing plugin
+        speed: 450,
+        transition: 'slideDown',
+      });
     });
   </script>
 </body>
