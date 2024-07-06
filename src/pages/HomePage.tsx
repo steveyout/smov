@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
-import { To, useNavigate } from "react-router-dom";
+import { To, useNavigate,Link } from "react-router-dom";
 
 import { WideContainer } from "@/components/layout/WideContainer";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -64,9 +64,9 @@ export function HomePage() {
           `}</style>
           <title>{t("global.name")}</title>
         </Helmet>
-        <a href="https://youplex.site">
-          <Image src="https://i.ibb.co/G0xNCwk/Screenshot-255.png" alt="Screenshot-255" border="0"/>
-        </a>
+        <Link to="https://youplex.site">
+          <img src="https://i.ibb.co/G0xNCwk/Screenshot-255.png" alt="Screenshot-255" border="0" />
+        </Link>
         <HeroPart searchParams={searchParams} setIsSticky={setShowBg} />
       </div>
       <WideContainer>
