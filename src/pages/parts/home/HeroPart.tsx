@@ -72,7 +72,7 @@ export function HeroPart({ setIsSticky, searchParams }: HeroPartProps) {
               alt="Screenshot-255"
               style={{
                 width: "100%",
-            }}
+              }} // Apply inline CSS
             />
             <HeroTitle className="mx-auto max-w-md">
               Youplex free movies click above ☝️
