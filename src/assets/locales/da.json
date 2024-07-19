@@ -538,7 +538,7 @@
             },
             "register": {
                 "text": "Del fremskridt mellem enheder, og hold dem synkroniseret. ( ̧⸝⸝⍢⸝⸝)ෆ",
-                "title": "Synkroniser med cloud",
+                "title": "Synkroniser med sudo-cloud",
                 "cta": "Kom godt i gang"
             },
             "title": "Profil"
@@ -551,7 +551,7 @@
                 "gray": "Grå",
                 "red": "Rød",
                 "teal": "Blågrøn",
-                "blck": "BLACKED"
+                "blck": "BLCK"
             },
             "title": "Udseende"
         },

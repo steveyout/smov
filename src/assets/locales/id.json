@@ -165,7 +165,7 @@
         "menu": {
             "about": "Tentang kami",
             "logout": "Keluar",
-            "register": "Sinkronkan ke cloud",
+            "register": "Sinkronkan ke sudo-cloud",
             "settings": "Pengaturan",
             "support": "Bantuan"
         }
@@ -434,7 +434,7 @@
             "register": {
                 "cta": "Memulai",
                 "text": "Bagikan dan sinkronkan antar perangkat progres tontonan anda.",
-                "title": "Sinkronkan ke cloud"
+                "title": "Sinkronkan ke sudo-cloud"
             },
             "title": "Akun"
         },

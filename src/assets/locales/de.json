@@ -165,7 +165,7 @@
         "menu": {
             "about": "Über uns",
             "logout": "Abmelden",
-            "register": "Mit der Cloud synchronisieren",
+            "register": "Mit der sudo-cloud synchronisieren",
             "settings": "Einstellungen",
             "support": "Support"
         }
@@ -467,7 +467,7 @@
             "register": {
                 "cta": "Los geht's",
                 "text": "Teilen deinen Fortschritt zwischen Geräten und halte sie synchronisiert.",
-                "title": "Mit der Cloud synchronisieren"
+                "title": "Mit der sudo-cloud synchronisieren"
             },
             "title": "Konto"
         },

@@ -176,7 +176,7 @@
         "menu": {
             "about": "À propos de nous",
             "logout": "Se déconnecter",
-            "register": "Synchroniser au Cloud",
+            "register": "Synchroniser au sudo-cloud",
             "settings": "Paramètres",
             "support": "Support"
         }
@@ -478,7 +478,7 @@
             "register": {
                 "cta": "Commencer",
                 "text": "Partagez la progression de vos films et séries entre vos appareils et gardez-les synchronisés.",
-                "title": "Synchroniser au Cloud"
+                "title": "Synchroniser au sudo-cloud"
             },
             "title": "Compte"
         },
