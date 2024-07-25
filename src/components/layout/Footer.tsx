@@ -6,7 +6,6 @@ import type { RequireExactlyOne } from "type-fest";
 import { Icon, Icons } from "@/components/Icon";
 import { BrandPill } from "@/components/layout/BrandPill";
 import { WideContainer } from "@/components/layout/WideContainer";
-import { conf } from "@/setup/config";
 
 // to and href are mutually exclusive
 type FooterLinkProps = RequireExactlyOne<
@@ -46,7 +45,7 @@ function Dmca() {
   const { t } = useTranslation();
 
   return (
-    <FooterLink to="/dmca" icon={Icons.DRAGON}>
+    <FooterLink to="/dmca" icon={Icons.Hammer}>
       {t("footer.links.dmca")}
     </FooterLink>
   );
@@ -69,13 +68,14 @@ export function Footer() {
             {t("footer.legal.disclaimer")}
           </h3>
           <p className="mt-3">{t("footer.legal.disclaimerText")}</p>
+          <Dmca />
         </div>
-        <div className="flex flex-wrap gap-[0.5rem] -ml-3">
+        {/* <div className="flex flex-wrap gap-[0.5rem] -ml-3">
           <FooterLink icon={Icons.DISCORD} href={conf().DISCORD_LINK}>
             {t("footer.links.discord")}
           </FooterLink>
           <Dmca />
-        </div>
+        </div> */}
       </WideContainer>
     </footer>
   );
