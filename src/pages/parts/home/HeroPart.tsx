@@ -105,10 +105,12 @@ export function HeroPart({ setIsSticky, searchParams }: HeroPartProps) {
                   className={`flex-grow w-full ${
                     showBg ? "max-w-full sm:max-w-3xl" : ""
                   } transition-all duration-300 ease-in-out h-14 flex ${
-                    isMobile ? "flex-col" : "flex-row"
+                    isMobile ? "flex-col " : "flex-row"
                   } items-center`}
                 >
-                  <div className="flex-grow w-full">
+                  <div
+                    className={`flex-grow ${isMobile ? "flex-grow w-72" : ""}`}
+                  >
                     <SearchBarInput
                       ref={inputRef}
                       onChange={setSearch}
