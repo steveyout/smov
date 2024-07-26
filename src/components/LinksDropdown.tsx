@@ -157,7 +157,10 @@ export function LinksDropdown(props: { children: React.ReactNode }) {
               href={conf().DISCORD_LINK}
               icon={Icons.DISCORD}
             />
-            <CircleDropdownLink href={conf().GITHUB_LINK} icon={Icons.GITHUB} />
+            <CircleDropdownLink
+              href="https://github.com/levrx/movie-vault"
+              icon={Icons.GITHUB}
+            />
             <CircleDropdownLink href="/about" icon={Icons.CIRCLE_QUESTION} />
           </div>
         </div>

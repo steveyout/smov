@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import type { RequireExactlyOne } from "type-fest";
 
 import { Icon, Icons } from "@/components/Icon";
-import { BrandPill } from "@/components/layout/BrandPill";
 import { WideContainer } from "@/components/layout/WideContainer";
 
 // to and href are mutually exclusive
@@ -58,9 +57,9 @@ export function Footer() {
     <footer className="mt-16 border-t border-type-divider py-16 md:py-8">
       <WideContainer ultraWide classNames="grid md:grid-cols-2 gap-16 md:gap-8">
         <div>
-          <div className="inline-block">
+          {/* <div className="inline-block">
             <BrandPill />
-          </div>
+          </div> */}
           <p className="mt-4 lg:max-w-[400px]">{t("footer.tagline")}</p>
         </div>
         <div className="md:text-right">
