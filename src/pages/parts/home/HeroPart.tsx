@@ -9,7 +9,6 @@ import { useSlashFocus } from "@/components/player/hooks/useSlashFocus";
 import { HeroTitle } from "@/components/text/HeroTitle";
 import { useRandomTranslation } from "@/hooks/useRandomTranslation";
 import { useSearchQuery } from "@/hooks/useSearchQuery";
-import { Button } from "@/pages/About";
 import { useBannerSize } from "@/stores/banner";
 
 export interface HeroPartProps {
@@ -70,6 +69,8 @@ export function HeroPart({ setIsSticky, searchParams }: HeroPartProps) {
     navigate(path);
   };
 
+  const isMobile = windowWidth < 640;
+
   return (
     <ThinContainer>
       <div className="mt-44 md:mt-28 lg:mt-44 space-y-16 md:space-y-12 lg:space-y-16 text-center">
@@ -91,36 +92,79 @@ export function HeroPart({ setIsSticky, searchParams }: HeroPartProps) {
             onFixedToggle={stickStateChanged}
           >
             <div
-              className={`flex justify-center items-center ${showBg ? "bg-background" : ""}`}
+              className={`flex ${isMobile ? "flex-col" : "flex-row"} justify-center items-center ${
+                showBg ? "bg-background" : ""
+              }`}
             >
               <div
-                className={`flex items-center justify-center ${showBg ? "w-full px-4 sm:px-8 md:px-12 lg:px-16" : ""}`}
+                className={`flex flex-col items-center justify-center ${
+                  showBg ? "w-full px-4 sm:px-8 md:px-12 lg:px-16" : ""
+                }`}
               >
                 <div
-                  className={`flex-grow ${!showBg ? "mr-4" : ""} ${showBg ? "max-w-full sm:max-w-3xl" : ""} transition-all duration-300 ease-in-out`}
+                  className={`flex-grow w-full ${
+                    showBg ? "max-w-full sm:max-w-3xl" : ""
+                  } transition-all duration-300 ease-in-out h-14 flex ${
+                    isMobile ? "flex-col" : "flex-row"
+                  } items-center`}
                 >
-                  <SearchBarInput
-                    ref={inputRef}
-                    onChange={setSearch}
-                    value={search}
-                    onUnFocus={setSearchUnFocus}
-                    placeholder={placeholder ?? ""}
-                  />
-                </div>
-                {!showBg && (
-                  <div className="flex-shrink-0">
-                    <Button
-                      className="p-2 rounded-full bg-largeCard-background text-buttons-secondaryText flex items-center justify-center w-14 h-14"
-                      onClick={() => handleClick("/discover")}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                        className="w-6 h-6 fill-current"
+                  <div className="flex-grow w-full">
+                    <SearchBarInput
+                      ref={inputRef}
+                      onChange={setSearch}
+                      value={search}
+                      onUnFocus={setSearchUnFocus}
+                      placeholder={placeholder ?? ""}
+                    />
+                  </div>
+                  <div
+                    className={`ml-4 flex-shrink-0 ${
+                      isSticky ? "invisible" : ""
+                    } ${isMobile ? "hidden" : "block"}`}
+                  >
+                    <div className="relative group">
+                      <button
+                        type="button"
+                        className="p-2 rounded-full bg-largeCard-background text-buttons-secondaryText flex items-center justify-center w-14 h-14 hover:bg-opacity-80 transition-all duration-300 ease-in-out"
+                        onClick={() => handleClick("/discover")}
                       >
-                        <path d="M493.7 .9L299.4 75.6l2.3-29.3c1-12.8-12.8-21.5-24-15.1L101.3 133.4C38.6 169.7 0 236.6 0 309C0 421.1 90.9 512 203 512c72.4 0 139.4-38.6 175.7-101.3L480.8 234.3c6.5-11.1-2.2-25-15.1-24l-29.3 2.3L511.1 18.3c.6-1.5 .9-3.2 .9-4.8C512 6 506 0 498.5 0c-1.7 0-3.3 .3-4.8 .9zM192 192a128 128 0 1 1 0 256 128 128 0 1 1 0-256zm0 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm16 96a16 16 0 1 0 0-32 16 16 0 1 0 0 32z" />
-                      </svg>
-                    </Button>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          className="w-6 h-6 fill-current"
+                        >
+                          <path d="M493.7 .9L299.4 75.6l2.3-29.3c1-12.8-12.8-21.5-24-15.1L101.3 133.4C38.6 169.7 0 236.6 0 309C0 421.1 90.9 512 203 512c72.4 0 139.4-38.6 175.7-101.3L480.8 234.3c6.5-11.1-2.2-25-15.1-24l-29.3 2.3L511.1 18.3c.6-1.5 .9-3.2 .9-4.8C512 6 506 0 498.5 0c-1.7 0-3.3 .3-4.8 .9zM192 192a128 128 0 1 1 0 256 128 128 0 1 1 0-256zm0 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm16 96a16 16 0 1 0 0-32 16 16 0 1 0 0 32z" />
+                        </svg>
+                      </button>
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-2 bg-[#0A0A12] text-white text-base rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 whitespace-nowrap">
+                        Browse
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-[#0A0A12]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {isMobile && (
+                  <div
+                    className={`mt-4 sm:hidden w-full ${
+                      isSticky ? "hidden" : "block"
+                    }`}
+                  >
+                    <div className="relative group">
+                      <button
+                        type="button"
+                        className="w-full h-14 p-2 rounded-3xl bg-largeCard-background text-buttons-secondaryText flex items-center justify-center hover:bg-opacity-80 transition-all duration-300 ease-in-out"
+                        onClick={() => handleClick("/discover")}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          className="w-6 h-6 fill-current mr-2"
+                        >
+                          <path d="M493.7 .9L299.4 75.6l2.3-29.3c1-12.8-12.8-21.5-24-15.1L101.3 133.4C38.6 169.7 0 236.6 0 309C0 421.1 90.9 512 203 512c72.4 0 139.4-38.6 175.7-101.3L480.8 234.3c6.5-11.1-2.2-25-15.1-24l-29.3 2.3L511.1 18.3c.6-1.5 .9-3.2 .9-4.8C512 6 506 0 498.5 0c-1.7 0-3.3 .3-4.8 .9zM192 192a128 128 0 1 1 0 256 128 128 0 1 1 0-256zm0 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm16 96a16 16 0 1 0 0-32 16 16 0 1 0 0 32z" />
+                        </svg>
+                        Browse
+                      </button>
+                    </div>
                   </div>
                 )}
               </div>

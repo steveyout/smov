@@ -40,12 +40,14 @@ export const SearchBarInput = forwardRef<HTMLInputElement, SearchBarProps>(
       }
     }
 
+    const isMobile = windowWidth < 640;
+
     return (
       <Flare.Base
         className={c({
           "hover:flare-enabled group flex items-center rounded-[28px] transition-all relative":
             true,
-          "w-full max-w-[90vw] h-10 sm:w-[400px] sm:h-auto md:w-[500px] lg:w-[600px]":
+          "w-full max-w-[100vw] h-10 sm:w-[400px] sm:h-auto md:w-[500px] lg:w-[600px]":
             true,
           "bg-search-background": !focused,
           "bg-search-focused": focused,
@@ -63,12 +65,7 @@ export const SearchBarInput = forwardRef<HTMLInputElement, SearchBarProps>(
         />
         <Flare.Child className="flex flex-1 items-center">
           <div
-            className={c(
-              "flex items-center justify-center cursor-pointer sm:pointer-events-none",
-              {
-                "w-10 h-10 sm:w-auto sm:h-auto": true,
-              },
-            )}
+            className="flex items-center justify-center cursor-pointer sm:pointer-events-none w-10 h-10 sm:w-auto sm:h-auto"
             onClick={toggleExpand}
           >
             <Icon
@@ -77,12 +74,7 @@ export const SearchBarInput = forwardRef<HTMLInputElement, SearchBarProps>(
             />
           </div>
 
-          <div
-            className={c("flex-1 transition-all overflow-hidden", {
-              "w-0 sm:w-full": !expanded,
-              "w-full": expanded,
-            })}
-          >
+          <div className="flex-1 transition-all overflow-hidden w-full">
             <TextInputControl
               ref={ref}
               onUnFocus={() => {
@@ -98,7 +90,7 @@ export const SearchBarInput = forwardRef<HTMLInputElement, SearchBarProps>(
             />
           </div>
 
-          {props.value.length > 0 && (expanded || windowWidth >= 640) && (
+          {props.value.length > 0 && (
             <div
               onClick={() => {
                 props.onUnFocus("");
