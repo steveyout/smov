@@ -153,14 +153,6 @@ export function LinksDropdown(props: { children: React.ReactNode }) {
           ) : null}
           <Divider />
           <div className="my-4 flex justify-center items-center gap-4">
-            <CircleDropdownLink
-              href={conf().DISCORD_LINK}
-              icon={Icons.DISCORD}
-            />
-            <CircleDropdownLink
-              href="https://github.com/levrx/movie-vault"
-              icon={Icons.GITHUB}
-            />
             <CircleDropdownLink href="/about" icon={Icons.CIRCLE_QUESTION} />
           </div>
         </div>

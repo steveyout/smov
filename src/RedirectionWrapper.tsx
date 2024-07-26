@@ -25,11 +25,11 @@ export function RedirectionWrapper({ children }: RedirectionWrapperProps) {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50 p-4">
           <div className="bg-purple-950 p-4 sm:p-8 rounded-xl shadow-2xl text-center text-white w-full max-w-lg max-h-[90vh] overflow-y-auto">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-purple-300">
-              Welcome to Movies.Levrx.com!
+              Welcome to movies.levrx.lol!
             </h2>
             <div className="space-y-3 sm:space-y-4 text-gray-300 text-xs sm:text-sm leading-relaxed">
               <p>
-                Hello there, On July 25th 2024 Sudo-Flix.lol announced its
+                Hello there, On July 25th 2024 sudo-flix.lol announced its
                 closure due to a Cease and Desist Letter. You can discover more
                 about this at their respective discord server at
                 discord.gg/SudoFlix!
@@ -46,12 +46,12 @@ export function RedirectionWrapper({ children }: RedirectionWrapperProps) {
               </p>
               <p>
                 We recommend using this site if you were previously using
-                Sudo-Flix or any of its Official instances.
+                sudo-flix or any of its Official instances.
               </p>
               <p>
                 With best regards,
                 <br />
-                The Sudo-Flix, Movie-Web and VidBinge Team
+                The sudo-flix, movie-web and VidBinge Team
               </p>
             </div>
             <button
