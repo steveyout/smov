@@ -5,6 +5,7 @@
   "homepage": "https://github.com/sussy-code/smov",
   "scripts": {
     "dev": "vite",
+    "dev:host": "vite --host",
     "build": "vite build",
     "build:pwa": "cross-env VITE_PWA_ENABLED=true vite build",
     "test": "vitest run",
