@@ -1,5 +1,5 @@
 import c from "classnames";
-import { forwardRef, useEffect, useState } from "react";
+import { forwardRef, useState } from "react";
 
 import { Flare } from "@/components/utils/Flare";
 
@@ -16,38 +16,15 @@ export interface SearchBarProps {
 export const SearchBarInput = forwardRef<HTMLInputElement, SearchBarProps>(
   (props, ref) => {
     const [focused, setFocused] = useState(false);
-    const [expanded, setExpanded] = useState(false);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-    useEffect(() => {
-      const handleResize = () => setWindowWidth(window.innerWidth);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
 
     function setSearch(value: string) {
       props.onChange(value, true);
     }
 
-    function toggleExpand() {
-      setExpanded(!expanded);
-      if (!expanded) {
-        setTimeout(() => {
-          if (ref && typeof ref !== "function") {
-            ref.current?.focus();
-          }
-        }, 100);
-      }
-    }
-
-    const isMobile = windowWidth < 640;
-
     return (
       <Flare.Base
         className={c({
-          "hover:flare-enabled group flex items-center rounded-[28px] transition-all relative":
-            true,
-          "w-full max-w-[100vw] h-10 sm:w-[400px] sm:h-auto md:w-[500px] lg:w-[600px]":
+          "hover:flare-enabled group flex flex-col rounded-[28px] transition-colors sm:flex-row sm:items-center relative":
             true,
           "bg-search-background": !focused,
           "bg-search-focused": focused,
@@ -63,32 +40,23 @@ export const SearchBarInput = forwardRef<HTMLInputElement, SearchBarProps>(
             "bg-search-focused": focused,
           })}
         />
-        <Flare.Child className="flex flex-1 items-center">
-          <div
-            className="flex items-center justify-center cursor-pointer sm:pointer-events-none w-10 h-10 sm:w-auto sm:h-auto"
-            onClick={toggleExpand}
-          >
-            <Icon
-              icon={Icons.SEARCH}
-              className="w-5 h-5 text-search-icon sm:w-4 sm:h-4 sm:absolute sm:left-5 sm:top-1/2 sm:-translate-y-1/2"
-            />
+        <Flare.Child className="flex flex-1 flex-col">
+          <div className="pointer-events-none absolute bottom-0 left-5 top-0 flex max-h-14 items-center text-search-icon">
+            <Icon icon={Icons.SEARCH} />
           </div>
 
-          <div className="flex-1 transition-all overflow-hidden w-full">
-            <TextInputControl
-              ref={ref}
-              onUnFocus={() => {
-                setFocused(false);
-                props.onUnFocus();
-                setExpanded(false);
-              }}
-              onFocus={() => setFocused(true)}
-              onChange={(val) => setSearch(val)}
-              value={props.value}
-              className="w-full bg-transparent px-4 py-3 sm:py-4 text-sm sm:text-base text-search-text placeholder-search-placeholder focus:outline-none sm:pl-14"
-              placeholder={props.placeholder}
-            />
-          </div>
+          <TextInputControl
+            ref={ref}
+            onUnFocus={() => {
+              setFocused(false);
+              props.onUnFocus();
+            }}
+            onFocus={() => setFocused(true)}
+            onChange={(val) => setSearch(val)}
+            value={props.value}
+            className="w-full flex-1 bg-transparent px-4 py-4 pl-12 text-search-text placeholder-search-placeholder focus:outline-none sm:py-4 sm:pr-2"
+            placeholder={props.placeholder}
+          />
 
           {props.value.length > 0 && (
             <div
@@ -98,12 +66,9 @@ export const SearchBarInput = forwardRef<HTMLInputElement, SearchBarProps>(
                   ref.current?.focus();
                 }
               }}
-              className="cursor-pointer hover:text-white flex justify-center h-10 w-10 items-center hover:scale-110 active:scale-110 text-search-icon rounded-full transition-[transform,background-color] duration-200 absolute right-0 top-1/2 -translate-y-1/2"
+              className="cursor-pointer hover:text-white  absolute bottom-0 right-2 top-0 flex justify-center my-auto h-10 w-10 items-center hover:bg-search-hoverBackground active:scale-110 text-search-icon rounded-full transition-[transform,background-color] duration-200"
             >
-              <Icon
-                icon={Icons.X}
-                className="w-5 h-5 transition-colors duration-200"
-              />
+              <Icon icon={Icons.X} className="transition-colors duration-200" />
             </div>
           )}
         </Flare.Child>
