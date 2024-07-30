@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { To, useNavigate } from "react-router-dom";
 
 import { base64ToBuffer, decryptData } from "@/backend/accounts/crypto";
 import { UserAvatar } from "@/components/Avatar";
@@ -74,10 +74,15 @@ function DropdownLink(props: {
   );
 }
 
-function CircleDropdownLink(props: { icon: Icons; href: string }) {
+function CircleDropdownLink(props: {
+  icon: Icons;
+  href?: string;
+  onClick?: () => void;
+}) {
   return (
     <GoToLink
       href={props.href}
+      onClick={props.onClick}
       className="tabbable w-11 h-11 rounded-full bg-dropdown-contentBackground text-dropdown-text hover:text-white transition-colors duration-100 flex justify-center items-center"
     >
       <Icon className="text-2xl" icon={props.icon} />
@@ -88,6 +93,7 @@ function CircleDropdownLink(props: { icon: Icons; href: string }) {
 export function LinksDropdown(props: { children: React.ReactNode }) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   const deviceName = useAuthStore((s) => s.account?.deviceName);
   const seed = useAuthStore((s) => s.account?.seed);
   const bufferSeed = useMemo(
@@ -109,6 +115,11 @@ export function LinksDropdown(props: { children: React.ReactNode }) {
   const toggleOpen = useCallback(() => {
     setOpen((s) => !s);
   }, []);
+
+  const handleClick = (path: To) => {
+    window.scrollTo(0, 0);
+    navigate(path);
+  };
 
   return (
     <div className="relative is-dropdown">
@@ -160,6 +171,10 @@ export function LinksDropdown(props: { children: React.ReactNode }) {
             <CircleDropdownLink
               href="https://github.com/levrx/movie-vault"
               icon={Icons.GITHUB}
+            />
+            <CircleDropdownLink
+              onClick={() => handleClick("/discover")}
+              icon={Icons.COMPASS}
             />
             <CircleDropdownLink href="/about" icon={Icons.CIRCLE_QUESTION} />
           </div>

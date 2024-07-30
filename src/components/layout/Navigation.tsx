@@ -19,6 +19,7 @@ export interface NavigationProps {
 export function Navigation(props: NavigationProps) {
   const bannerHeight = useBannerSize();
   const { loggedIn } = useAuth();
+
   return (
     <>
       {/* lightbar */}

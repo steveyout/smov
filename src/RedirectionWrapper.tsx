@@ -51,7 +51,7 @@ export function RedirectionWrapper({ children }: RedirectionWrapperProps) {
               <p>
                 With best regards,
                 <br />
-                The sudo-flix, movie-web and VidBinge Team
+                The Sudo-Flix and Levrx Team
               </p>
             </div>
             <button
