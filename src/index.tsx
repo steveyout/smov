@@ -186,7 +186,7 @@ root.render(
             <BookmarkSyncer />
             <SettingsSyncer />
             <TheRouter>
-                <MigrationRunner />
+              <MigrationRunner />
             </TheRouter>
           </ThemeProvider>
         </Suspense>
