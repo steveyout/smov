@@ -35,7 +35,6 @@ import {
   extensionInfo,
   isExtensionActiveCached,
 } from "./backend/extension/messaging";
-import { RedirectionWrapper } from "./RedirectionWrapper";
 import { initializeChromecast } from "./setup/chromecast";
 import { initializeOldStores } from "./stores/__old/migrations";
 
@@ -187,9 +186,7 @@ root.render(
             <BookmarkSyncer />
             <SettingsSyncer />
             <TheRouter>
-              <RedirectionWrapper>
                 <MigrationRunner />
-              </RedirectionWrapper>
             </TheRouter>
           </ThemeProvider>
         </Suspense>
