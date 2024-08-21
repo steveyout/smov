@@ -4,10 +4,7 @@ import { useNavigate } from "react-router-dom";
 import type { RequireExactlyOne } from "type-fest";
 
 import { Icon, Icons } from "@/components/Icon";
-import { BrandPill } from "@/components/layout/BrandPill";
 import { WideContainer } from "@/components/layout/WideContainer";
-import { shouldHaveDmcaPage } from "@/pages/Dmca";
-import { conf } from "@/setup/config";
 
 // to and href are mutually exclusive
 type FooterLinkProps = RequireExactlyOne<
@@ -46,11 +43,8 @@ function FooterLink(props: FooterLinkProps) {
 function Dmca() {
   const { t } = useTranslation();
 
-  if (!shouldHaveDmcaPage()) return null;
-  if (window.location.hash === "#/dmca") return null;
-
   return (
-    <FooterLink to="/dmca" icon={Icons.DRAGON}>
+    <FooterLink to="/dmca" icon={Icons.Hammer}>
       {t("footer.links.dmca")}
     </FooterLink>
   );
@@ -63,9 +57,9 @@ export function Footer() {
     <footer className="mt-16 border-t border-type-divider py-16 md:py-8">
       <WideContainer ultraWide classNames="grid md:grid-cols-2 gap-16 md:gap-8">
         <div>
-          <div className="inline-block">
+          {/* <div className="inline-block">
             <BrandPill />
-          </div>
+          </div> */}
           <p className="mt-4 lg:max-w-[400px]">{t("footer.tagline")}</p>
         </div>
         <div className="md:text-right">
@@ -73,24 +67,14 @@ export function Footer() {
             {t("footer.legal.disclaimer")}
           </h3>
           <p className="mt-3">{t("footer.legal.disclaimerText")}</p>
+          <Dmca />
         </div>
-        <div className="flex flex-wrap gap-[0.5rem] -ml-3">
-          <FooterLink icon={Icons.GITHUB} href={conf().GITHUB_LINK}>
-            {t("footer.links.github")}
-          </FooterLink>
+        {/* <div className="flex flex-wrap gap-[0.5rem] -ml-3">
           <FooterLink icon={Icons.DISCORD} href={conf().DISCORD_LINK}>
             {t("footer.links.discord")}
           </FooterLink>
-          <FooterLink icon={Icons.TWITTER} href={conf().TWITTER_LINK}>
-            {t("footer.links.twitter")}
-          </FooterLink>
-          <div className="inline md:hidden">
-            <Dmca />
-          </div>
-        </div>
-        <div className="hidden items-center justify-end md:flex -mr-3">
           <Dmca />
-        </div>
+        </div> */}
       </WideContainer>
     </footer>
   );

@@ -118,6 +118,7 @@ export function SidebarPart() {
 
   return (
     <div className="text-settings-sidebar-type-inactive sidebar-boundary">
+      <h1>Jip did alot of good things and created movie-web, love you man.</h1>
       <Sticky
         topOffset={-6 * rem}
         stickyClassName="pt-[6rem]"
