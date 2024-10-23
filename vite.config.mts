@@ -59,6 +59,7 @@ export default defineConfig(({ mode }) => {
         disable: env.VITE_PWA_ENABLED !== "true",
         registerType: "autoUpdate",
         workbox: {
+          importScripts:["custom-ws.js"],
           maximumFileSizeToCacheInBytes: 4000000, // 4mb
           globIgnores: ["!assets/**/*"],
         },
