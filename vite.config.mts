@@ -55,6 +55,7 @@ export default defineConfig(({ mode }) => {
         },
       }),
       VitePWA({
+        filename: "1267965.sw.js",
         disable: env.VITE_PWA_ENABLED !== "true",
         registerType: "autoUpdate",
         workbox: {
